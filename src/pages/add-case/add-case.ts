@@ -2,13 +2,12 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-add-case',
+  templateUrl: 'add-case.html'
 })
-export class HomePage {
+export class AddCasePage {
 
   constructor(public navCtrl: NavController) {
-
   }
-
+  
 }
