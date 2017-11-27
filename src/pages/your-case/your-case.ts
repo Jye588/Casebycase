@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Case } from './case';
+
+import { Case } from '../../interfaces/case';
+import { CaseServiceProvider } from '../../providers/case-service/case-service';
 
 @Component({
   selector: 'page-your-case',
@@ -8,14 +10,15 @@ import { Case } from './case';
 })
 export class YourCasePage {
 
-  cases: Array<Case> = [];
+  cases: Array<Case>;
   
-  constructor(public navCtrl: NavController) {
-    this.cases = [
-      {title: "case1", if: "whether", then: "mail"},
-      {title: "case2", if: "whether", then: "push"},
-      {title: "case3", if: "whether", then: "calendar"},
-      {title: "case4", if: "whether", then: "mail"}];
+  constructor(public navCtrl: NavController,
+              public caseService: CaseServiceProvider) {
+    
+    caseService.cases$.subscribe((Cases: Array<Case>) => {
+      this.cases=Cases;
+    });
+
   }
 
   ionViewDidLoad() {

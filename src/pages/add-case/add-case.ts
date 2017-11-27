@@ -10,4 +10,7 @@ export class AddCasePage {
   constructor(public navCtrl: NavController) {
   }
   
+  addCase(){
+    this.navCtrl.push("ConditionPage");
+  }
 }
