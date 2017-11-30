@@ -5,6 +5,8 @@ import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject } from 'rxjs/Rx';
 import { Case } from '../../interfaces/case';
 
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+
 /*
   Generated class for the CaseServiceProvider provider.
 
@@ -14,21 +16,19 @@ import { Case } from '../../interfaces/case';
 @Injectable()
 export class CaseServiceProvider {
 
-  cases: Array<Case>;
+  cases: FirebaseListObservable<any[]>; 
   casesSubject: BehaviorSubject<Array<Case>> = new BehaviorSubject([]);
   cases$: Observable<Array<Case>> = this.casesSubject.asObservable();
-
+  //caseList: Array<Case>;
   newCase:Case;
 
-  constructor() {
+  constructor(public af: AngularFireDatabase) {
+  
+    this.cases = af.list('/cases');
     console.log('Hello CaseServiceProvider Provider');
-    this.cases = [
-      {title: "case1", condition: "whether", action: "mail"},
-      {title: "case2", condition: "whether", action: "push"},
-      {title: "case3", condition: "whether", action: "calendar"},
-      {title: "case4", condition: "whether", action: "mail"}
-    ];
-
+  
+    console.log(this.cases);
+    
     this.newCase = {title: '', condition: '', action: ''};
     this.refresh();
   }
@@ -56,6 +56,6 @@ export class CaseServiceProvider {
   }
 
   refresh(){
-    this.casesSubject.next(this.cases);
+    //this.casesSubject.next(this.cases);
   }
 }

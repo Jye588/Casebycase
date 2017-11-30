@@ -13,7 +13,7 @@
       <img src="assets/img/main.png">
     </ion-card-header>
   </ion-card>
-  <ion-item style="background-color:#EDEAE3;" no-lines *ngFor ="let case of cases">
+  <ion-item style="background-color:#EDEAE3;" no-lines *ngFor ="let case of cases |async">
       <button ion-button color={{case.action}} full style="height:200px;">
           <div class="card-title">{{case.title}}</div>
       </button>

@@ -55,7 +55,6 @@ export class ActionGmailPage {
       ]
     });
     prompt.present();
-    //this.navCtrl.popToRoot();
 
   }
 

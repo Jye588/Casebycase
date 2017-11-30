@@ -11,6 +11,17 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { CaseServiceProvider } from '../providers/case-service/case-service';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+export const firebaseConfig = {
+    apiKey: "AIzaSyAslLbNCeMcF14YIX2DGQBMxDhSdTwrMNw",
+    authDomain: "casebycase-c672d.firebaseapp.com",
+    databaseURL: "https://casebycase-c672d.firebaseio.com",
+    projectId: "casebycase-c672d",
+    storageBucket: "casebycase-c672d.appspot.com",
+    messagingSenderId: "345770592132"
+};
+
 @NgModule({
   declarations: [
     MyApp,
@@ -20,7 +31,9 @@ import { CaseServiceProvider } from '../providers/case-service/case-service';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

@@ -4,20 +4,23 @@ import { NavController } from 'ionic-angular';
 import { Case } from '../../interfaces/case';
 import { CaseServiceProvider } from '../../providers/case-service/case-service';
 
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+
+
 @Component({
   selector: 'page-your-case',
   templateUrl: 'your-case.html'
 })
 export class YourCasePage {
 
-  cases: Array<Case>;
+  cases: FirebaseListObservable<any[]>; 
   
   constructor(public navCtrl: NavController,
-              public caseService: CaseServiceProvider) {
+              public caseService: CaseServiceProvider,
+              public af: AngularFireDatabase) {
     
-    caseService.cases$.subscribe((Cases: Array<Case>) => {
-      this.cases=Cases;
-    });
+    this.cases = af.list('/cases');
+
 
   }
 
