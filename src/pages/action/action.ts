@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController,Nav  } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController} from 'ionic-angular';
 
 import { CaseServiceProvider } from '../../providers/case-service/case-service';
-
+import { Action } from '../../interfaces/action';
 /**
  * Generated class for the ActionPage page.
  *
@@ -17,51 +17,33 @@ import { CaseServiceProvider } from '../../providers/case-service/case-service';
 })
 export class ActionPage {
 
+  actions: Array<Action>;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, 
-              public alertCtrl:AlertController, public caseService: CaseServiceProvider, public nav:Nav ) {
+              public alertCtrl:AlertController, public caseService: CaseServiceProvider ) {
+
+    this.actions = [
+      {title: "gmail", icon: "mail"},
+      {title: "push", icon: "alarm"},
+      {title: "calendar", icon: "calendar"},
+      {title: "print", icon: "print"},
+      {title: "turn on", icon: "bulb"},
+      {title: "music", icon: "musical-notes"},
+      {title: "Cafe", icon: "cafe"},
+      {title: "Call", icon: "call"},
+      {title: "Car", icon: "car"}
+    ];   
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ActionPage');
   }
 
-  selectAction(actName:string){
-    this.caseService.setNewAction(actName);
-    console.log(actName);
-    this.addCase();
+  selectAction(act:Action){
+    console.log(act.title);
+    this.caseService.setNewAction('push');
+    this.navCtrl.push("ActionGmailPage");
   }
-
-  addCase(){
-    let prompt = this.alertCtrl.create({
-      title: 'Add Case',
-      message: "Enter the case name",
-      inputs:[
-        {
-          name: 'title',
-          placeholder: 'mycase'
-        },
-      ],
-      buttons:[
-        {
-          text: 'Cancel',
-          handler: data=>{
-            console.log("cancel clicked");
-          }
-        },
-        {
-          text: 'Done',
-          handler: data=>{
-            if(data.title != ''){
-              this.caseService.setNewTitle(data.title);
-            }
-          }
-        }
-      ]
-    });
-    prompt.present();
-    this.navCtrl.popToRoot();
-
-  }
-
 
 }

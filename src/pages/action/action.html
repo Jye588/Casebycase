@@ -13,9 +13,23 @@
 </ion-header>
 
 
-<ion-content padding>
-    <button ion-button (click)="selectAction('act1')">
-        Action1
-    </button>
+<ion-content class = "grid-full">
+  
+      <ion-grid>
+        <ion-buttons start>
+          <ion-row>
+            <ion-col col-4 *ngFor = "let action of actions; let i = index">
+              <button ion-button clear full class = "cell{{i}}" style = "width:100%; height:120px" (click)="selectAction(action)">
+                <div>
+                  <div>
+                    <ion-icon name = "{{action.icon}}" style = "zoom:4.0;"></ion-icon>
+                    </div>
+                    <label>{{action.title}}</label>
+                  </div>
+                </button>
+              </ion-col>
+          </ion-row>
+        </ion-buttons>
+      </ion-grid>
 
 </ion-content>

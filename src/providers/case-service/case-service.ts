@@ -28,6 +28,8 @@ export class CaseServiceProvider {
       {title: "case3", condition: "whether", action: "calendar"},
       {title: "case4", condition: "whether", action: "mail"}
     ];
+
+    this.newCase = {title: '', condition: '', action: ''};
     this.refresh();
   }
 
@@ -36,16 +38,18 @@ export class CaseServiceProvider {
   }
 
   setNewCondition(cond: string){
+    console.log(cond);
     this.newCase={title: '', condition: '', action: ''};
     this.newCase.condition = cond;
   }
 
   setNewAction(act: string){
+    console.log(act);
     this.newCase.action = act;
-
   }
 
   setNewTitle(title:string){
+    console.log(title);
     this.newCase.title = title;
     this.cases.push(this.newCase);
     this.refresh();

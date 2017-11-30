@@ -1,3 +1,72 @@
 page-condition {
 
+    .grid-full ion-grid {
+      padding: 10px 10px ;
+      margin: 3;
+    }
+
+    .grid-full ion-row {
+        height: 100%;
+        padding:0;
+        flex-wrap: wrap;
+        margin: 0;
+      }
+      
+      .grid-full ion-col {
+        //flex: 50% 50% 50%;
+        //max-width: 33.33%;
+        text-align: center;
+        padding:0;
+        margin:0;
+      
+      }
+      .cell1 {
+        background-color: #C5DCFC;
+        color: #FC0707;
+        font-weight: bold;
+        margin: 0;
+      }
+      .cell2 {
+        background-color: #262B69;
+        color: #0B8000;
+        font-weight: bold;
+      }
+      .cell3 {
+        background-color: #A0C5FA;
+        color: #130080;
+        font-weight: bold;
+      }
+      .cell4 {
+        background-color: #DAEBAC;
+        color: #807E00;
+        font-weight: bold;
+      }
+      .cell5 {
+        background-color: #F7BABA;
+        color: #800040;
+        font-weight: bold;
+      }
+      .cell6 {
+        background-color: #B3AFC9;
+        color: #03010A;
+        font-weight: bold;
+      }
+      .cell7 {
+        background-color: #B3D0FC;
+        color: #807E00;
+        font-weight: bold;
+      }
+      .cell8 {
+        background-color: #73A7F9;
+        color: #800040;
+        font-weight: bold;
+      }
+      .cell9 {
+        background-color: #8CB9FA;
+        color: #03010A;
+        font-weight: bold;
+      }
+
 }
+   
+

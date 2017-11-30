@@ -1,0 +1,28 @@
+<!--
+  Generated template for the ConditionNewsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar color = "detail">
+      <ion-title>
+          Select condition 
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding id="condition-news">
+    <img src="assets/img/news.png" style="display:block; width:60%; height:auto; margin-left:auto; margin-right:auto;"/>
+      <div class = "news-detail">
+        Scraps naver news articles. Enter a search words to find the news articles that you want.
+      </div>
+      <div class = "box">
+        <div class = "container">
+          <ion-label class = "label" stacked> Search word </ion-label>
+          <ion-input type = "search" placeholder = "Enter search command"></ion-input>
+        </div>
+      </div>
+    <button ion-button (click)="goToDetail()">다음</button>
+  </ion-content>
+  

@@ -7,15 +7,15 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding id="your-case" style="background-color:#EDEAE3;">
-  <ion-card style="background-color:#EDEAE3;">
+<ion-content padding id="your-case" style="background-color:#EDEAE3;" class="card-background-page">
+  <ion-card style="background-color:#EDEAE3;" >
     <ion-card-header>
-      <img src="assets/img/main.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" \>
+      <img src="assets/img/main.png">
     </ion-card-header>
   </ion-card>
   <ion-item style="background-color:#EDEAE3;" no-lines *ngFor ="let case of cases">
-        <button ion-button block full large color="{{case.action}}" >
-            {{case.title}}
-        </button>
+      <button ion-button color={{case.action}} full style="height:200px;">
+          <div class="card-title">{{case.title}}</div>
+      </button>
   </ion-item>
 </ion-content>
