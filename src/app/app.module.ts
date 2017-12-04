@@ -10,6 +10,7 @@ import { AddCasePage } from '../pages/add-case/add-case';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { CaseServiceProvider } from '../providers/case-service/case-service';
+import { LocalNotifications } from '@ionic-native/local-notifications';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -45,6 +46,7 @@ export const firebaseConfig = {
   providers: [
     StatusBar,
     SplashScreen,
+    LocalNotifications,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     CaseServiceProvider
   ]

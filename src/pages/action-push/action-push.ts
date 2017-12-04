@@ -5,6 +5,7 @@ import * as moment from 'moment';
 
 import { CaseServiceProvider } from '../../providers/case-service/case-service';
 import { TabsPage } from '../tabs/tabs';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 /**
  * Generated class for the ActionPushPage page.
  *
@@ -19,16 +20,19 @@ import { TabsPage } from '../tabs/tabs';
 })
 export class ActionPushPage {
 
-
   notifyTime: any;
   notifications: any[] =[];
   days: any[];
   chosenHours: number;
   chosenMinutes: number;
-
+  logTexts: FirebaseListObservable<any[]>;
+  logText: string;
 
   constructor(public navCtrl: NavController, public platform: Platform, public alertCtrl: AlertController, 
-    public localNotifications: LocalNotifications, public caseService: CaseServiceProvider) {
+    public localNotifications: LocalNotifications, public caseService: CaseServiceProvider,
+    public af: AngularFireDatabase ) {
+      this.logTexts = af.list('/cases/-L-T9kegs5QDvauHBIsG/log'); 
+      this.logText = this.logTexts.last.toString();
      this.notifyTime = moment(new Date()).format(); 
      // 사용자의 현지 시간대에서 iso 문자열을 얻을 수 있도록 Moment가 처리하고 format 메서드 호출
 
@@ -47,8 +51,9 @@ export class ActionPushPage {
   }
 
   ionViewDidLoad(){
-
+    console.log("acionPushPage loaded");
   }
+
   timeChange(time){
     // <ion-datetime> 입력에 대한 변경사항을 수신 (datetime object) 
     this.chosenHours = time.hour; //time.hour.value; 
@@ -79,8 +84,8 @@ export class ActionPushPage {
         // 객체 생성 
         let notification = {
                id: day.dayCode,
-               title: 'Hey!',
-               text: 'You just got notified :)',
+               title: 'Today Weather',
+               text: 'this.logText',
                at: firstNotificationTime,
                every: 'week'
         };
@@ -159,7 +164,6 @@ export class ActionPushPage {
       ]
     });
     prompt.present();
-
   }
 
 

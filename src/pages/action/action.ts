@@ -36,7 +36,7 @@ export class ActionPage {
   selectAction(act:Action){
     console.log(act.title);
     this.caseService.setNewAction(act.title);
-    if(act.title == 'Push-Notification'){
+    if(act.title === 'Push-Notification'){
       this.navCtrl.push("ActionPushPage");
     }
     else{
