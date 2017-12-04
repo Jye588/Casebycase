@@ -19,7 +19,6 @@ export class CaseServiceProvider {
   cases: FirebaseListObservable<any[]>; 
   casesSubject: BehaviorSubject<Array<Case>> = new BehaviorSubject([]);
   cases$: Observable<Array<Case>> = this.casesSubject.asObservable();
-  //caseList: Array<Case>;
   newCase:Case;
 
   constructor(public af: AngularFireDatabase) {
@@ -29,7 +28,7 @@ export class CaseServiceProvider {
   
     console.log(this.cases);
     
-    this.newCase = {title: '', condition: '', action: '', log: 'start'};
+    this.newCase = {title: '', condition: '', action: ''};
     this.refresh();
   }
 
@@ -39,7 +38,7 @@ export class CaseServiceProvider {
 
   setNewCondition(cond: string){
     console.log(cond);
-    this.newCase={title: '', condition: '', action: '', log: 'start'};
+    this.newCase={title: '', condition: '', action: ''};
     this.newCase.condition = cond;
   }
 
