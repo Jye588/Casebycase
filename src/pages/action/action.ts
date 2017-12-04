@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams, AlertController} from 'ionic-angul
 
 import { CaseServiceProvider } from '../../providers/case-service/case-service';
 import { Action } from '../../interfaces/action';
+
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 /**
  * Generated class for the ActionPage page.
  *
@@ -17,22 +19,13 @@ import { Action } from '../../interfaces/action';
 })
 export class ActionPage {
 
-  actions: Array<Action>;
+  actions: FirebaseListObservable<any[]>; 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, 
-              public alertCtrl:AlertController, public caseService: CaseServiceProvider ) {
+              public alertCtrl:AlertController, public caseService: CaseServiceProvider,
+              public af: AngularFireDatabase ) {
 
-    this.actions = [
-      {title: "gmail", icon: "mail"},
-      {title: "push", icon: "alarm"},
-      {title: "calendar", icon: "calendar"},
-      {title: "print", icon: "print"},
-      {title: "turn on", icon: "bulb"},
-      {title: "music", icon: "musical-notes"},
-      {title: "Cafe", icon: "cafe"},
-      {title: "Call", icon: "call"},
-      {title: "Car", icon: "car"}
-    ];   
+    this.actions = af.list('/services/actions');
 
   }
 
@@ -42,7 +35,7 @@ export class ActionPage {
 
   selectAction(act:Action){
     console.log(act.title);
-    this.caseService.setNewAction('push');
+    this.caseService.setNewAction(act.title);
     this.navCtrl.push("ActionGmailPage");
   }
 

@@ -21,12 +21,13 @@ export class YourCasePage {
     
     this.cases = af.list('/cases');
 
-
   }
 
   ionViewDidLoad() {
     console.log(this.cases);
   }
 
-  
+  showLog(c:Case){
+    this.navCtrl.push("CaseLogPage", c.log);
+  }
 }

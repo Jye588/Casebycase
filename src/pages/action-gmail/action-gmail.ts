@@ -47,8 +47,8 @@ export class ActionGmailPage {
           handler: data=>{
             if(data.title != ''){
               this.caseService.setNewTitle(data.title);
-              this.navCtrl.popToRoot();       
               this.navCtrl.setRoot(TabsPage);
+              this.navCtrl.popToRoot();       
             }
           }
         }

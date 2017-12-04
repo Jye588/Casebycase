@@ -14,13 +14,17 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding id="add-case">
-  <img src="assets/img/Fdn5wFUgQcaNqPoGkQND_.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
-  <img src="assets/img/wBTknhK3QqmQkPjKQd2L_.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
-  <img src="assets/img/r7ndsC9SMquQbBRJqJhy_.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
-  <img src="assets/img/WEcqDAiGRX2lM9axzR6R_IT.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
-  <img src="assets/img/uMWSMhxxQB6Aayh6cbSz_.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
-  <img src="assets/img/Y8LaQ9JOSQGN4SQMF4zI_cbc.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
-  <img src="assets/img/UuBImzbQSECrdB8qLbb0_.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
-  <img src="assets/img/F8rH0YzIQead7clOhm0I_Rain.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
+<ion-content padding id="add-case" style="background-color:#EDEAE3;" class="card-background-page">
+  <ion-card style="background-color:#EDEAE3;" >
+    <ion-card-header>
+      <img src="assets/img/recom.png">
+    </ion-card-header>
+  </ion-card>
+  <ion-list>
+    <ion-item style="background-color:#EDEAE3;" no-lines *ngFor ="let recom of recoms">
+      <button ion-button color={{recom.action}} full style="height:200px;white-space:normal;" (click)="addRecomCase(recom)">
+        <div class="button-title">{{recom.title}}</div>
+      </button>  
+    </ion-item>
+  </ion-list>
 </ion-content>

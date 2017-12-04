@@ -29,7 +29,7 @@ export class CaseServiceProvider {
   
     console.log(this.cases);
     
-    this.newCase = {title: '', condition: '', action: ''};
+    this.newCase = {title: '', condition: '', action: '', log: 'start'};
     this.refresh();
   }
 
@@ -39,7 +39,7 @@ export class CaseServiceProvider {
 
   setNewCondition(cond: string){
     console.log(cond);
-    this.newCase={title: '', condition: '', action: ''};
+    this.newCase={title: '', condition: '', action: '', log: 'start'};
     this.newCase.condition = cond;
   }
 

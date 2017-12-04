@@ -1,72 +1,73 @@
 page-condition {
-
-    .grid-full ion-grid {
-      padding: 10px 10px ;
-      margin: 3;
-    }
-
-    .grid-full ion-row {
-        height: 100%;
-        padding:0;
-        flex-wrap: wrap;
-        margin: 0;
+  
+      .grid-full ion-grid {
+        padding: 10px 10px ;
+        margin: 3;
       }
-      
-      .grid-full ion-col {
-        //flex: 50% 50% 50%;
-        //max-width: 33.33%;
-        text-align: center;
-        padding:0;
-        margin:0;
-      
-      }
-      .cell1 {
-        background-color: #C5DCFC;
-        color: #FC0707;
-        font-weight: bold;
-        margin: 0;
-      }
-      .cell2 {
-        background-color: #262B69;
-        color: #0B8000;
-        font-weight: bold;
-      }
-      .cell3 {
-        background-color: #A0C5FA;
-        color: #130080;
-        font-weight: bold;
-      }
-      .cell4 {
-        background-color: #DAEBAC;
-        color: #807E00;
-        font-weight: bold;
-      }
-      .cell5 {
-        background-color: #F7BABA;
-        color: #800040;
-        font-weight: bold;
-      }
-      .cell6 {
-        background-color: #B3AFC9;
-        color: #03010A;
-        font-weight: bold;
-      }
-      .cell7 {
-        background-color: #B3D0FC;
-        color: #807E00;
-        font-weight: bold;
-      }
-      .cell8 {
-        background-color: #73A7F9;
-        color: #800040;
-        font-weight: bold;
-      }
-      .cell9 {
-        background-color: #8CB9FA;
-        color: #03010A;
-        font-weight: bold;
-      }
-
-}
-   
-
+  
+      .grid-full ion-row {
+          height: 100%;
+          padding:0;
+          flex-wrap: wrap;
+          margin: 0;
+        }
+        
+        .grid-full ion-col {
+          //flex: 50% 50% 50%;
+          //max-width: 33.33%;
+          text-align: center;
+          padding:0;
+          margin:0;
+        
+        }
+        .cell6 {
+          background-color: #A57873;
+          color: rgb(225, 228, 219);
+          font-weight: bold;
+          margin: 0;
+        }
+        .cell8 {
+          background-color: #839893;
+          color: #EAE7D5;
+          font-weight: bold;
+        }
+        .cell5 {
+          background-color: #3A3838;
+          color: #FAC60E;
+          font-weight: bold;
+        }
+        .cell4 {
+          background-color: #F3E7DB;
+          color: #034F84;
+          font-weight: bold;
+        }
+        .cell7 {
+          background-color: #F3F1EC;
+          color: #D62525;
+          font-weight: bold;
+        }
+        .cell1 {
+          background-color: #F7F1C1;
+          color: #526767;
+          font-weight: bold;
+        }
+        .cell2 {
+          background-color: #2E3B4D;
+          color: #E0E0D8;
+          font-weight: bold;
+        }
+        .cell3 {
+          background-color: #e1e4db;
+          color: #6B516E;
+          font-weight: bold;
+        }
+        .cell0 {
+          background-color: #F1F1E8;
+          color: #78A6A4;
+          font-weight: bold;
+        }
+  
+  }
+     
+  
+  

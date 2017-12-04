@@ -18,7 +18,7 @@
       
       <ion-buttons start>
         <ion-row>
-          <ion-col col-4 *ngFor = "let condition of conditions; let i = index">
+          <ion-col col-4 *ngFor = "let condition of conditions|async; let i = index">
             <button ion-button clear full class = "cell{{i}}" style = "width:100%; height:120px" (click)="selectCondition(condition)">
               <div>
                 <div>

@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar color = "detail">
+    <ion-title>
+        Select condition 
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding id="condition-weather">
+  <img src="assets/img/weather.png" style="display:block; width:50%; height:auto; margin-left:auto; margin-right:auto;"/>
+    <div class = "weather-detail">
+      날씨 디테일이다.
+    </div>
+    <ion-list>
+      <ion-item no-lines *ngFor = "let condition of conditions">
+        <button ion-button full block color = "detail" style = "width:100%; height:40px"  (click)="goToDetail()">
+          {{condition.title}}
+        </button>
+      </ion-item>
+    </ion-list>
+</ion-content>
