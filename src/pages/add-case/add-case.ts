@@ -18,10 +18,10 @@ export class AddCasePage {
     
     this.cases = af.list('/cases');
     this.recoms = [
-      {title: 'Get an email when new exhibition opens', condition: 'exhibition', action: 'gmail'},
-      {title: '2', condition: '2', action: 'action2'},
-      {title: '3', condition: '3', action: 'action3'},
-      {title: '4', condition: '4', action: 'action4'}
+      {title: 'Get an email when new exhibition opens', condition: 'exhibition', action: 'action1'},
+      {title: "Share today's IT news articles to your team members", condition: 'News', action: 'action2'},
+      {title: 'Turn on vibrate when you enter school', condition: 'GPS', action: 'action3'},
+      {title: 'Trun on/off your room lights with one tap', condition: 'IOT', action: 'action4'}
     ];
 
   }

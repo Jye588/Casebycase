@@ -2,5 +2,7 @@
   "name": "casebycase",
   "app_id": "8f696133",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {
+    "cordova": {}
+  }
 }

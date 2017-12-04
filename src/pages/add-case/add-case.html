@@ -22,7 +22,7 @@
   </ion-card>
   <ion-list>
     <ion-item style="background-color:#EDEAE3;" no-lines *ngFor ="let recom of recoms">
-      <button ion-button color={{recom.action}} full style="height:200px;white-space:normal;" (click)="addRecomCase(recom)">
+      <button ion-button color={{recom.action}} full style="height:200px;white-space:normal;margin: auto;" (click)="addRecomCase(recom)">
         <div class="button-title">{{recom.title}}</div>
       </button>  
     </ion-item>

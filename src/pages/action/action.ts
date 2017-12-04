@@ -36,7 +36,12 @@ export class ActionPage {
   selectAction(act:Action){
     console.log(act.title);
     this.caseService.setNewAction(act.title);
-    this.navCtrl.push("ActionGmailPage");
+    if(act.title == 'Push-Notification'){
+      this.navCtrl.push("ActionPushPage");
+    }
+    else{
+      this.navCtrl.push("ActionGmailPage");
+    }
   }
 
 }

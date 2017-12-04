@@ -15,9 +15,9 @@ export class ConditionWeatherPage {
 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController, public caseService: CaseServiceProvider) {
     this.conditions = [
-      {title: 'info1'},
-      {title: 'info2'},
-      {title: 'info3'}
+      {title: "today's weather"},
+      {title: 'fine dust information'},
+      {title: 'laundry %'}
     ];
   }
 
